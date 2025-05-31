@@ -1,10 +1,13 @@
 package com.hrishabh.quora.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
@@ -18,7 +21,9 @@ import lombok.Setter;
                 @UniqueConstraint(columnNames = {"user_id", "comment_id"})
         }
 )
-
+@SuperBuilder
+@AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Votes {
 
     @Id
@@ -49,7 +54,6 @@ public class Votes {
     @Column(nullable = false)
     private boolean upvote;
 
-    // Timestamp if needed
-    // @CreationTimestamp or @Temporal for date
+
 
 }

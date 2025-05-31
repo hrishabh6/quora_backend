@@ -1,8 +1,10 @@
 package com.hrishabh.quora.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hrishabh.quora.models.shared.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "questions")
@@ -10,7 +12,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Question extends BaseModel {
 
     @Column(nullable = false, length = 255)

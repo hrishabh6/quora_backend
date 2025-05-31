@@ -1,15 +1,18 @@
 package com.hrishabh.quora.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hrishabh.quora.models.shared.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Answer extends BaseModel {
 
     @Column(nullable = false, columnDefinition = "TEXT")

@@ -1,8 +1,14 @@
 package com.hrishabh.quora.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hrishabh.quora.models.shared.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "users")  // Avoid using "user" as it's a reserved word in some databases
@@ -10,7 +16,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User extends BaseModel {
 
     @Column(nullable = false, unique = true, length = 50)
