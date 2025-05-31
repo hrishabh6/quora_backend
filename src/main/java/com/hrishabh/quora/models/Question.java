@@ -24,6 +24,5 @@ public class Question extends BaseModel {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    // You can later add relationships like:
-    // @OneToMany(mappedBy = "question") private List<Answer> answers;
+
 }

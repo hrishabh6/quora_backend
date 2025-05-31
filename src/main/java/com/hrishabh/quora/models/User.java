@@ -29,7 +29,5 @@ public class User extends BaseModel {
 
 
 
-    // You can later add relationships like:
-    // @OneToMany(mappedBy = "user") private List<Question> questions;
-    // @OneToMany(mappedBy = "user") private List<Answer> answers;
+
 }
