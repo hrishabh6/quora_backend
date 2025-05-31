@@ -1,4 +1,7 @@
 package com.hrishabh.quora.repository;
 
-public interface VoteRepository {
+import com.hrishabh.quora.models.Votes;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface VoteRepository extends JpaRepository<Votes, Long> {
 }

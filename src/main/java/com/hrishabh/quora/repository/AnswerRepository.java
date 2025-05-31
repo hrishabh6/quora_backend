@@ -1,4 +1,7 @@
 package com.hrishabh.quora.repository;
 
-public interface AnswerRepository {
+import com.hrishabh.quora.models.Answer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
 }
